@@ -12,10 +12,10 @@ cd Polyantha
 sbt build
 ```
 
-Then add the resulting binary in your path.
+Then add the resulting binary in your path. Run this to verify that it's correctly installed
 
 ```bash
-polyantha --Version
+polyantha --version
 ```
 
 ## Usage
@@ -30,4 +30,4 @@ polyantha examples/helloworld.antha
 
 Polyantha is distributed under the terms of the Apache License (Version 2.0).
 
-See [License](License) for more details.
+See [License](LICENSE) for more details.
