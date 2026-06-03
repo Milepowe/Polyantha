@@ -23,7 +23,7 @@ polyantha --version
 Run an example:
 
 ```bash
-polyantha examples/helloworld.antha
+polyantha examples/helloworld.polyantha
 ```
 
 ## License
