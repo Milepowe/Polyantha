@@ -1,4 +1,7 @@
-// TODO add the different functions
+import scala.annotation.tailrec
+import scala.io.{Source, StdIn}
+import scala.util.control.TailCalls.TailRec
+
 object Polyantha {
   def main(args: Array[String]): Unit = {
     args match
@@ -7,11 +10,14 @@ object Polyantha {
       case _           => println("Usage: Polyantha [script]")
   }
 
-  def RunPrompt(): Unit = {
-    println("TODO!")
+@tailrec  def RunPrompt(): Unit = {
+    print("> ")
+    Run(StdIn.readLine())
+
+    RunPrompt()
   }
 
   def Run(path: String): Unit = {
-    print("TODO!")
+    println(path)
   }
 }
