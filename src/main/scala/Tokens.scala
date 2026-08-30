@@ -17,6 +17,8 @@ class Token {
     case AND, OR, IF, ELSE, FUNCTION, WHILE, FOR, RETURN,
     PRINT, VAR, CONST
 
+    case EOF
+
   }
 
 

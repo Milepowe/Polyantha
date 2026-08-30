@@ -10,7 +10,7 @@ object Polyantha {
       case _           => println("Usage: Polyantha [script]")
   }
 
-@tailrec  def RunPrompt(): Unit = {
+@tailrec def RunPrompt(): Unit = {
     print("> ")
     Run(StdIn.readLine())
 
