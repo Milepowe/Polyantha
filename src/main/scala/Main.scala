@@ -1,4 +1,4 @@
-package com.polyantha
+package polyantha
 
 import scala.annotation.tailrec
 import scala.io.{Source, StdIn}
@@ -20,6 +20,11 @@ object Polyantha {
   }
 
   // Todo!
-  def Run(source: String): Unit = {}
+  def Run(source: String): Unit = {
+    val scanner = new Scanner(source)
+    val tokens = scanner.ScanToken()
+
+    tokens.foreach(tokens => tokens.PolyaString())
+  }
 
 }

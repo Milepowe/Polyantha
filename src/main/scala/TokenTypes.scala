@@ -1,5 +1,4 @@
-package com.polyantha
-
+package polyantha
 enum TokensTypes {
 
   // Separators

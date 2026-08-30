@@ -1,4 +1,4 @@
-package com.polyantha
+package polyantha
 
 case class Token(
     token: TokensTypes,
@@ -7,6 +7,6 @@ case class Token(
     line: Int
 ) {
   def PolyaString(): Unit = {
-    print(s"$token $lexeme $literal")
+    println(s"$token $lexeme $literal")
   }
 }

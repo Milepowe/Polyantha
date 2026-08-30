@@ -1,6 +1,7 @@
-package com.polyantha
+package polyantha
 
 import scala.collection.mutable.ListBuffer
+import polyantha.TokensTypes.*
 
 class Scanner(source: String) {
   private var tokens: ListBuffer[Token] = ListBuffer()
@@ -19,18 +20,27 @@ class Scanner(source: String) {
     tokens += new Token(tokenType, text, literal, line)
   }
 
-  def ScanToken() = {
+  def ScanTokens() = {
     val c: Char = Advance()
 
     c match
-      case '(' => AddToken(TokensTypes.LEFT_PAREN)
+      case '(' => AddToken(LEFT_PAREN)
+      case ')' => AddToken(RIGHT_PAREN)
+      case '{' => AddToken(LEFT_BRACE)
+      case '}' => AddToken(RIGHT_BRACE)
+      case '*' => AddToken(STAR)
+      case '.' => AddToken(DOT)
+      case ',' => AddToken(COMMA)
+      case '+' => AddToken(PLUS)
+      case '-' => AddToken(MINUS)
+      case '/' => AddToken(SLASH)
       case _   => ""
   }
 
-  def ScanTokens: ListBuffer[Token] = {
+  def ScanToken(): ListBuffer[Token] = {
     while (!IsAtEnd) {
       start = current
-      ScanToken()
+      ScanTokens()
     }
 
     tokens += new Token(TokensTypes.EOF, "", null, line)
