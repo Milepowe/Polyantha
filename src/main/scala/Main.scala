@@ -1,3 +1,5 @@
+package com.polyantha
+
 import scala.annotation.tailrec
 import scala.io.{Source, StdIn}
 import scala.util.control.TailCalls.TailRec
@@ -10,7 +12,7 @@ object Polyantha {
       case _           => println("Usage: Polyantha [script]")
   }
 
-@tailrec def RunPrompt(): Unit = {
+  @tailrec def RunPrompt(): Unit = {
     print("> ")
     Run(StdIn.readLine())
 
