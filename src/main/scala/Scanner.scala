@@ -47,4 +47,9 @@ class Scanner(source: String) {
   }
 
   def IsAtEnd: Boolean = current >= source.length()
+
+  def Peek(): Char = if IsAtEnd then '\u0000' else source.charAt(current)
+
+  def PeekNext(): Char =
+    if IsAtEnd then '\u0000' else source.charAt(current + 1)
 }
