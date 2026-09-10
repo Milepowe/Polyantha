@@ -5,8 +5,4 @@ case class Token(
     lexeme: String,
     literal: Any,
     line: Int
-) {
-  def PolyaString(): Unit = {
-    println(s"$token $lexeme $literal")
-  }
-}
+)

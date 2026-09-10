@@ -24,7 +24,7 @@ object Polyantha {
     val scanner = new Scanner(source)
     val tokens = scanner.ScanToken()
 
-    tokens.foreach(tokens => tokens.PolyaString())
+    tokens.foreach(tokens => println(tokens.toString()))
   }
 
 }
