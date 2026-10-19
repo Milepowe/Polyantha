@@ -34,7 +34,7 @@ class Scanner(source: String) {
       case '+' => AddToken(PLUS)
       case '-' => AddToken(MINUS)
       case '/' => AddToken(SLASH)
-      case _   => ""
+      case _   => IsAlpha(c)
   }
 
   def ScanToken(): ListBuffer[Token] = {
@@ -52,4 +52,10 @@ class Scanner(source: String) {
 
   def PeekNext(): Char =
     if IsAtEnd then '\u0000' else source.charAt(current + 1)
+
+  def IsAlpha(lexeme: Char): Boolean = {
+    if lexeme <= 'a' || lexeme >= 'z' || lexeme <= 'A' || lexeme >= 'Z' then
+      true
+    else false
+  }
 }
