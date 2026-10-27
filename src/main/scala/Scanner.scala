@@ -34,7 +34,8 @@ class Scanner(source: String) {
       case '+' => AddToken(PLUS)
       case '-' => AddToken(MINUS)
       case '/' => AddToken(SLASH)
-      case _   => IsAlpha(c)
+      case '"' => IsString()
+      case _   => if IsAlpha(c) then Identifier()
   }
 
   def ScanToken(): ListBuffer[Token] = {
@@ -54,8 +55,26 @@ class Scanner(source: String) {
     if IsAtEnd then '\u0000' else source.charAt(current + 1)
 
   def IsAlpha(lexeme: Char): Boolean = {
-    if lexeme <= 'a' || lexeme >= 'z' || lexeme <= 'A' || lexeme >= 'Z' then
-      true
+    if lexeme.isLetter then true
     else false
+  }
+
+  def IsString(): Unit = {
+    while (Peek() != '"' && !IsAtEnd) {
+      Advance()
+    }
+    Advance()
+
+    val literal = source.substring(start, current)
+
+    AddToken(STRING, literal)
+  }
+
+  def Identifier(): Unit = {
+    while (IsAlpha(Peek())) {
+      Advance()
+    }
+
+    AddToken(IDENTIFIER)
   }
 }
