@@ -63,6 +63,8 @@ class Scanner(source: String) {
     while (Peek() != '"' && !IsAtEnd) {
       Advance()
     }
+    if IsAtEnd then throw new IllegalArgumentException("Unterminated String")
+
     Advance()
 
     val literal = source.substring(start, current)
