@@ -6,6 +6,8 @@ It is mostly an hobby project so don't expect much from it.
 
 ## Installation
 
+TODO, to change
+
 ```bash
 git clone https://github.com/Milepowe/Polyantha.git
 cd Polyantha
