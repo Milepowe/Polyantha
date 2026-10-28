@@ -19,7 +19,6 @@ object Polyantha {
     RunPrompt()
   }
 
-  // Todo!
   def Run(source: String): Unit = {
     val scanner = new Scanner(source)
     val tokens = scanner.ScanToken()
